@@ -11,3 +11,8 @@ LDFLAGS := -X 'main.version=$(VERSION)' \
 .PHONY: build
 build:
 	go build -ldflags "$(LDFLAGS)" -o main
+
+.PHONY: lint
+lint:
+	go vet main.go
+	golint -set_exit_status main.go
