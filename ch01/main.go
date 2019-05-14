@@ -5,6 +5,7 @@ import (
 	"sync"
 )
 
+var version string
 var revision string
 var goversion string
 var builddate string
@@ -38,6 +39,7 @@ func main() {
 	if ok {
 		fmt.Println(value)
 		fmt.Println()
+		fmt.Println("version:   " + version)
 		fmt.Println("revision:  " + revision)
 		fmt.Println("goversion: " + goversion)
 		fmt.Println("builddate: " + builddate)
