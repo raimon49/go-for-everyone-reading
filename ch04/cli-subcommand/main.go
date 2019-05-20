@@ -2,6 +2,7 @@ package main
 
 
 import (
+	"flag"
 	"fmt"
 	"os"
 
@@ -23,6 +24,7 @@ type Command interface {
 
 // addコマンドの定義
 type AddCommand struct {
+	Debug bool
 }
 
 func (c *AddCommand) Synopsis() string {
@@ -35,8 +37,20 @@ func (c *AddCommand) Help() string {
 
 // todo add xxx実行時の処理
 func (c *AddCommand) Run(args []string) int {
+	var debug bool
+
+	flags := flag.NewFlagSet("add", flag.ContinueOnError)
+	flags.BoolVar(&debug, "debug", false, "Run as DEBUG mode")
+
+	if err := flags.Parse(args); err != nil {
+		return 1
+	}
+
+
 	return 0
 }
+
+var debug = false
 
 func main() {
 	c := cli.NewCLI("todo", "0.1.0")
@@ -47,7 +61,9 @@ func main() {
 	// サブコマンドを登録
 	c.Commands = map[string]cli.CommandFactory{
 		"add": func() (cli.Command, error) {
-			return &AddCommand{}, nil
+			return &AddCommand{
+				Debug: debug,
+			}, nil
 		},
 	}
 
