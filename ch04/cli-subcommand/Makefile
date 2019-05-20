@@ -9,8 +9,12 @@ LDFLAGS := -X 'main.version=$(VERSION)' \
 BIN_NAME := "todo"
 
 .DEFAULT_GOAL:= build
+.PHONY: setup
+setup:
+	go get "github.com/mitchellh/cli"
+
 .PHONY: build
-build:
+build: setup
 	go build -ldflags "$(LDFLAGS)" -o "$(BIN_NAME)"
 
 .PHONY: lint
