@@ -7,6 +7,11 @@ import (
 	"os"
 )
 
+const (
+	ExitCodeOK        int = iota
+	ExitCodeError
+)
+
 // 標準出力と標準エラーのストリームをフィールドとして持つCLIの定義
 type CLI struct {
 	outStream, errStream io.Writer
@@ -23,5 +28,5 @@ func (c *CLI) Run(args []string) int {
 	var version = "v0.1.0"
 	fmt.Fprintf(c.errStream, "gobook version %s \n", version)
 
-	return 1
+	return ExitCodeError
 }
