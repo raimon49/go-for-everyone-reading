@@ -1,6 +1,7 @@
 package cat
 
 import (
+	"fmt"
 	"testing"
 )
 
@@ -32,3 +33,25 @@ func BenchmarkStringBuf100(b *testing.B) { bench(b, 100, buf) }
 
 func BenchmarkStringCat10000(b *testing.B) { bench(b, 10000, cat) }
 func BenchmarkStringBuf10000(b *testing.B) { bench(b, 10000, buf) }
+
+// サブベンチマークで1つのベンチマーク手続きの中で全てを実行
+func BenchmarkStringConcatenate(b *testing.B) {
+	benchCases := []struct {
+		name string
+		n    int
+		f    func(...string) string
+	}{
+		{"Cat", 3, cat},
+		{"Buf", 3, buf},
+		{"Cat", 100, cat},
+		{"Buf", 100, buf},
+		{"Cat", 10000, cat},
+		{"Buf", 10000, cat},
+	}
+
+	for _, c := range benchCases {
+		b.Run(fmt.Sprintf("%s%d", c.name, c.n), func(b *testing.B) {
+			bench(b, c.n, c.f)
+		})
+	}
+}
