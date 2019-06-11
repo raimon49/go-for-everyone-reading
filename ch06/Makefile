@@ -2,9 +2,11 @@
 
 .DEFAULT_GOAL:= test
 
+# Stringと名前のつくベンチマーク関数を全て実行
 bench:
 	go test cat.go cat_test.go -bench String
 
+# 実装コードとテストコードを一緒に引数に指定
 test:
 	go test -v calc.go calc_test.go
 	go test -v hello.go hello_test.go
