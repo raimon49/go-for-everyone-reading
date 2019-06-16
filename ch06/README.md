@@ -11,3 +11,9 @@ $ make test
 ```bash
 $ make bench
 ```
+
+## 6.4 テストの実践的なテクニック
+
+```bash
+$ make reflect
+```
