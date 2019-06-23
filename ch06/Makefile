@@ -11,6 +11,7 @@ test:
 	go test -v calc.go calc_test.go
 	go test -v hello.go hello_test.go
 	go test -v unordered_test.go
+	go test -v setup_test.go
 
 .PHONY: reflect
 reflect:
