@@ -22,8 +22,10 @@ $ make reflect
 
 ### Race Detectorを使って競合状態を検出する
 
-* [data-race/](data-race)
-* [fixed-data-race/](fixed-data-race)
+```bash
+$ make race
+$ make fixed-data-race
+```
 
 ### TestMainによるテストの制御
 

@@ -16,6 +16,14 @@ test:
 reflect:
 	go test -v reflect_test.go
 
+.PHONY: race
+race:
+	cd data-race; make race
+
+.PHONY: fixed-data-race
+fixed-data-race:
+	cd fixed-data-race; make race
+
 .PHONY: setup
 setup:
 	go test -v setup_test.go
