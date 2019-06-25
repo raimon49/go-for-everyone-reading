@@ -23,7 +23,10 @@ $ make reflect
 ### Race Detectorを使って競合状態を検出する
 
 ```bash
+# Data Raceが検出される
 $ make race
+
+# Data Raceが解消され検出されない
 $ make fixed-data-race
 ```
 
