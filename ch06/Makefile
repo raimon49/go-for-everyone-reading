@@ -27,3 +27,7 @@ fixed-data-race:
 .PHONY: setup
 setup:
 	go test -v setup_test.go
+
+.PHONY: integration
+integration:
+	cd build-constrains; make
