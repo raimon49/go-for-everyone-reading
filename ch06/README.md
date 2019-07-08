@@ -35,3 +35,9 @@ $ make fixed-data-race
 ```bash
 $ make setup
 ```
+
+### Build Constraintsを利用したテスト対象の指定
+
+```bash
+$ make integration
+```
