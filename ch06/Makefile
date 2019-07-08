@@ -31,3 +31,8 @@ setup:
 .PHONY: integration
 integration:
 	cd build-constrains; make
+
+.PHONY: gists
+gists:
+	go test -v gists.go gists_test.go
+

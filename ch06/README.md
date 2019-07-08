@@ -41,3 +41,9 @@ $ make setup
 ```bash
 $ make integration
 ```
+
+### テストにおける変数または手続きの書き換え
+
+```bash
+$ make gists
+```
