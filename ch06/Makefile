@@ -39,3 +39,8 @@ gists:
 .PHONY: gists_interface
 gists_interface:
 	go test -v gists_interface.go gists_interface_test.go
+
+.PHONY: diff_gists
+diff_gists:
+	diff -u gists.go gists_interface.go           || exit 0
+	diff -u gists_test.go gists_interface_test.go || exit 0
