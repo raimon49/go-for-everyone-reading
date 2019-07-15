@@ -36,3 +36,6 @@ integration:
 gists:
 	go test -v gists.go gists_test.go
 
+.PHONY: gists_interface
+gists_interface:
+	go test -v gists_interface.go gists_interface_test.go
