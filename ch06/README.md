@@ -47,3 +47,9 @@ $ make integration
 ```bash
 $ make gists
 ```
+
+### インターフェースを使ったモック
+
+```bash
+$ make gists_interface
+```
