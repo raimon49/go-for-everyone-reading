@@ -44,3 +44,7 @@ gists_interface:
 diff_gists:
 	diff -u gists.go gists_interface.go           || exit 0
 	diff -u gists_test.go gists_interface_test.go || exit 0
+
+.PHONY: cover
+cover:
+	go test -v words.go words_test.go
