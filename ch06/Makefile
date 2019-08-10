@@ -47,4 +47,10 @@ diff_gists:
 
 .PHONY: cover
 cover:
-	go test -v words.go words_test.go
+	go test -cover words.go words_test.go
+
+.PHONY: coverprofile
+coverprofile:
+	go test -coverprofile=coverage.out words.go words_test.go
+	go tool cover -func=coverage.out
+	@rm coverage.out
