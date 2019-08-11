@@ -49,6 +49,10 @@ diff_gists:
 cover:
 	go test -cover words.go words_test.go
 
+.PHONY: server_test
+server_test:
+	cd server-test; make test
+
 .PHONY: coverprofile
 coverprofile:
 	go test -coverprofile=coverage.out words.go words_test.go
