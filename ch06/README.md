@@ -53,3 +53,15 @@ $ make gists
 ```bash
 $ make gists_interface
 ```
+
+### net/http/httptestパッケージを使ったサーバーのテスト
+
+```bash
+$ make server_test
+```
+
+### テストカバレッジの出力
+
+```bash
+$ make coverprofile
+```
