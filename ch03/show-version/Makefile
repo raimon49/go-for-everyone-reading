@@ -10,3 +10,4 @@ build: setup
 .PHONY: setup
 setup:
 	go mod vendor
+	touch vendor/.gitkeep
