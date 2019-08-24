@@ -5,3 +5,7 @@ version:
 .PHONY: buffering
 buffering:
 	cd buffering; make
+
+.PHONY: multi-writer
+multi-writer:
+	cd multi-writer; make

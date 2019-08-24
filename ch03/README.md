@@ -13,3 +13,10 @@ $ make version
 ```bash
 $ make buffering
 ```
+
+### 複数の出力先に一度に書き込む
+
+```bash
+$ make multi-writer
+$ echo -n foo | ./multi-writer/multi-writer
+```
