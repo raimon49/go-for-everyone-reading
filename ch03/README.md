@@ -20,3 +20,9 @@ $ make buffering
 $ make multi-writer
 $ echo -n foo | ./multi-writer/multi-writer
 ```
+
+## 3.4 乱数を扱う
+
+```bash
+$ make rand
+```

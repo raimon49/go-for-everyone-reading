@@ -9,3 +9,7 @@ buffering:
 .PHONY: multi-writer
 multi-writer:
 	cd multi-writer; make
+
+.PHONY: rand
+rand:
+	cd rand; make
