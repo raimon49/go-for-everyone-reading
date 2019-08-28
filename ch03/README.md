@@ -26,3 +26,11 @@ $ echo -n foo | ./multi-writer/multi-writer
 ```bash
 $ make rand
 ```
+
+### 3.5 人間が扱いやすい形式の数値
+
+```bash
+$ make humanize
+$ humanize/main humanize/main
+humanize/main: 2.6 MB
+```

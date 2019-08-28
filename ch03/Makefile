@@ -13,3 +13,7 @@ multi-writer:
 .PHONY: rand
 rand:
 	cd rand; make
+
+.PHONY: humanize
+humanize:
+	cd humanize; make
