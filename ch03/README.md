@@ -27,7 +27,7 @@ $ echo -n foo | ./multi-writer/multi-writer
 $ make rand
 ```
 
-### 3.5 人間が扱いやすい形式の数値
+## 3.5 人間が扱いやすい形式の数値
 
 ```bash
 $ make humanize
