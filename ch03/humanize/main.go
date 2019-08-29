@@ -19,4 +19,11 @@ func main() {
 		name,
 		humanize.IBytes(uint64(s.Size())),
 	)
+	mb := "128MB"
+	b, _ := humanize.ParseBytes(mb)
+	fmt.Printf(
+		"%s is %s bytes\n",
+		mb,
+		humanize.Comma(int64(b)),
+	)
 }
