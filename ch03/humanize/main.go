@@ -14,4 +14,9 @@ func main() {
 		name,
 		humanize.Bytes(uint64(s.Size())),
 	)
+	fmt.Printf(
+		"%s: %s\n",
+		name,
+		humanize.IBytes(uint64(s.Size())),
+	)
 }
