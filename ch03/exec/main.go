@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"os"
 	"os/exec"
 	"io"
@@ -11,6 +12,10 @@ import (
 
 func main() {
 	tr(os.Stdin, os.Stdout, os.Stderr)
+
+	// UNIX系環境ではsh -c経由で1つの引数としてコマンド + オプションを実行可能
+	out, _ := exec.Command("sh", "-c", "ls -l").Output()
+	fmt.Println(string(out))
 }
 
 func tr(src io.Reader, dst io.Writer, errDst io.Writer) error {
