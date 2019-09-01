@@ -34,3 +34,10 @@ $ make humanize
 $ humanize/main humanize/main
 humanize/main: 2.6 MB
 ```
+
+## 3.6 Goから外部コマンドを実行する
+
+```bash
+$ make exec
+$ cat Makefile | exec/exec
+```

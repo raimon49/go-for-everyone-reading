@@ -17,3 +17,7 @@ rand:
 .PHONY: humanize
 humanize:
 	cd humanize; make
+
+.PHONY: exec
+exec:
+	cd exec; make
