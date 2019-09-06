@@ -1,6 +1,6 @@
 .PHONY: version
 version:
-	cd show-version; make
+	$(MAKE) -C show-version
 
 .PHONY: buffering
 buffering:
