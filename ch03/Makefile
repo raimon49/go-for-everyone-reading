@@ -4,20 +4,20 @@ version:
 
 .PHONY: buffering
 buffering:
-	cd buffering; make
+	$(MAKE) -C buffering
 
 .PHONY: multi-writer
 multi-writer:
-	cd multi-writer; make
+	$(MAKE) -C multi-writer
 
 .PHONY: rand
 rand:
-	cd rand; make
+	$(MAKE) -C rand
 
 .PHONY: humanize
 humanize:
-	cd humanize; make
+	$(MAKE) -C humanize
 
 .PHONY: exec
 exec:
-	cd exec; make
+	$(MAKE) -C exec
