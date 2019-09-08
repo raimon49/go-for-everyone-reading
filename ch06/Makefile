@@ -18,11 +18,11 @@ reflect:
 
 .PHONY: race
 race:
-	cd data-race; make race
+	$(MAKE) -C data-race race
 
 .PHONY: fixed-data-race
 fixed-data-race:
-	cd fixed-data-race; make race
+	$(MAKE) -C fixed-data-race race
 
 .PHONY: setup
 setup:
@@ -30,7 +30,7 @@ setup:
 
 .PHONY: integration
 integration:
-	cd build-constrains; make
+	$(MAKE) -C build-constrains
 
 .PHONY: gists
 gists:
@@ -51,7 +51,7 @@ cover:
 
 .PHONY: server_test
 server_test:
-	cd server-test; make test
+	$(MAKE) -C server-test test
 
 .PHONY: coverprofile
 coverprofile:
