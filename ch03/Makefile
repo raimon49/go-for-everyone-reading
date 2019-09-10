@@ -1,3 +1,5 @@
+.DEFAULT_GOAL:= exec
+
 .PHONY: version
 version:
 	$(MAKE) -C show-version
