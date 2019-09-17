@@ -23,3 +23,15 @@ humanize:
 .PHONY: exec
 exec:
 	$(MAKE) -C exec
+
+.PHONY: no-signal
+no-signal:
+	$(MAKE) -C no-signal
+
+.PHONY: handle-signal
+handle-signal:
+	$(MAKE) -C handle-signal
+
+.PHONY: timer-signal
+timer-signal:
+	$(MAKE) -C timer-signal

@@ -41,3 +41,18 @@ humanize/main: 2.6 MB
 $ make exec
 $ cat Makefile | exec/exec
 ```
+
+## 3.7 タイムアウトする
+
+## 3.8 シグナルを扱う
+
+```bash
+# デフォルトのシグナル挙動
+$ make no-signal
+
+# シグナルを自前ハンドリング
+$ make handle-signal
+
+# 独自のシグナルを定義してハンドリング
+$ make timer-signal
+```
