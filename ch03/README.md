@@ -42,8 +42,6 @@ $ make exec
 $ cat Makefile | exec/exec
 ```
 
-## 3.7 タイムアウトする
-
 ## 3.8 シグナルを扱う
 
 ```bash
