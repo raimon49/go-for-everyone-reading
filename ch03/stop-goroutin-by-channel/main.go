@@ -28,6 +28,7 @@ func fetchURL(queue chan string) {
 	for {
 		url, more := <- queue // closeされるとmoreはfalseになる
 		if more {
+			// URL取得処理（省略）
 			fmt.Println("fetching", url)
 		} else {
 			fmt.Println("workier exit")
