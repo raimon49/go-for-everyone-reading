@@ -31,9 +31,23 @@ func fetchURL(queue chan string) {
 			// URL取得処理（省略）
 			fmt.Println("fetching", url)
 		} else {
-			fmt.Println("workier exit")
+			fmt.Println("worker exit")
 			wg.Done()
 			return
 		}
 	}
 }
+
+/*
+ * チャネルから読みだした2つ目の値がfalseか調べる代わりにrangeでも同じことが可能
+ * チャネルがcloseされるとrange queueのforループを抜けるため、goroutineを終了できる
+func fetchURL(queue chan string, done chan bool) {
+	for url := range queue {
+		// URL取得処理（省略）
+		fmt.Println("fetching", url)
+	}
+
+	fmt.Println("worker exit")
+	done <- true
+}
+*/
