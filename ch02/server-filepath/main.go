@@ -15,6 +15,8 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// path:          httpやftpなどの論理パスを扱うパッケージ
+	// path/filepath: OSファイルシステム上の物理パスを扱うパッケージ
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		// httpリクエストは論理パスなのでpathパッケージを使う
 		if ok, err := path.Match("/data/*.html", r.URL.Path); err != nil || !ok {
