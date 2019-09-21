@@ -35,3 +35,8 @@ handle-signal:
 .PHONY: timer-signal
 timer-signal:
 	$(MAKE) -C timer-signal
+
+.PHONY: stop-goroutine
+stop-goroutine:
+	$(MAKE) -C stop-goroutin-by-channel
+	$(MAKE) -C stop-goroutin-by-context

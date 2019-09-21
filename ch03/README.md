@@ -54,3 +54,9 @@ $ make handle-signal
 # 独自のシグナルを定義してハンドリング
 $ make timer-signal
 ```
+
+## 3.9 goroutineの停止
+
+```bash
+$ make stop-goroutine
+```
