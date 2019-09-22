@@ -11,3 +11,7 @@ server-filepath:
 .PHONY: defer-release-file-handle
 defer-release-file-handle:
 	$(MAKE) -C defer-release-file-handle
+
+.PHONY: compatible-color-tty
+compatible-color-tty:
+	$(MAKE) -C compatible-color-tty

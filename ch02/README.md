@@ -12,3 +12,9 @@ $ make server-filepath
 # 積極的にdeferを使う
 $ make defer-release-file-handle
 ```
+
+### 2.3. TUIもWindowsで動かしたい
+
+```bash
+$ make compatible-color-tty
+```
