@@ -13,8 +13,14 @@ $ make server-filepath
 $ make defer-release-file-handle
 ```
 
-### 2.3. TUIもWindowsで動かしたい
+## 2.3. TUIもWindowsで動かしたい
 
 ```bash
 $ make compatible-color-tty
+```
+
+## 2.8 設定ファイルの取り扱い
+
+```bash
+$make load-config-file
 ```

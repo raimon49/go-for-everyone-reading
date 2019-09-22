@@ -15,3 +15,7 @@ defer-release-file-handle:
 .PHONY: compatible-color-tty
 compatible-color-tty:
 	$(MAKE) -C compatible-color-tty
+
+.PHONY: load-config-file
+load-config-file:
+	$(MAKE) -C load-config-file
