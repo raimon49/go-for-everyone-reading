@@ -8,3 +8,6 @@ join-filepath:
 server-filepath:
 	$(MAKE) -C server-filepath run-server
 
+.PHONY: defer-release-file-handle
+defer-release-file-handle:
+	$(MAKE) -C defer-release-file-handle

@@ -8,4 +8,7 @@ $ make join-filepath
 
 # 実行後、ローカルホストの :8080/data/index.html にアクセス
 $ make server-filepath
+
+# 積極的にdeferを使う
+$ make defer-release-file-handle
 ```
