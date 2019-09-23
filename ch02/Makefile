@@ -1,4 +1,4 @@
-.DEFAULT_GOAL:= exec
+.DEFAULT_GOAL:= join-filepath
 
 .PHONY: join-filepath
 join-filepath:
