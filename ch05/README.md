@@ -5,3 +5,10 @@
 ```bash
 $ make classical-type-assertion
 ```
+
+## 5.2 reflectパッケージ
+
+```bash
+# reflect.Value
+$ make reflect-value-of
+```

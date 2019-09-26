@@ -3,3 +3,7 @@
 .PHONY: classical-type-assertion
 classical-type-assertion:
 	$(MAKE) -C classical-type-assertion
+
+.PHONY: reflect-value-of
+reflect-value-of:
+	$(MAKE) -C reflect-value-of
