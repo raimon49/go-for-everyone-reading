@@ -10,6 +10,7 @@ type Point struct {
 	Y int
 }
 
+// Package reflect: https://golang.org/pkg/reflect/
 func main() {
 	p := &Point{X: 10, Y: 5}
 
