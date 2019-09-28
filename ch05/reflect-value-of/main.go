@@ -29,12 +29,26 @@ func main() {
 	fmt.Printf("xv (after SetInt()) = %d\n", xv.Int())
 
 	// ValueOf()で取り出したreflect.Valueは、それぞれの型に適合するメソッド以外を呼び出すとpanicを起こす
+	// それぞれの型と違うメソッドを呼ぶとpanicが起きるため、検査してから取り出す
 	rv1 := reflect.ValueOf(1)
+	if rv1.Kind() == reflect.Int {
+		fmt.Printf("rv1 type is Int: %d\n", rv1.Int())
+	}
+
 	rv2 := reflect.ValueOf("Hello, World")
+	if rv2.Kind() == reflect.String {
+		fmt.Printf("rv2 type is String: %s\n", rv2.String())
+	}
+
 	rv3 := reflect.ValueOf([]byte{0xa,0xd})
+	if rv3.Kind() == reflect.Slice {
+		fmt.Println("rv3 type is Slice")
+		rv3.Slice(0, 0)
+	}
+
 	rv4 := reflect.ValueOf(make(chan string))
-	rv1.Int()        // .String()だとpanic
-	rv2.String()     // .Int()だとpanic
-	rv3.Slice(0, 0)  // .MapKeys()だとpanic
-	rv4.TrySend(rv2) // TrySend(rv1)だとpanic
+	if rv4.Kind() == reflect.Chan {
+		fmt.Println("rv3 type is Chan")
+		rv4.TrySend(rv2) // TrySend(rv1)だとpanic
+	}
 }
