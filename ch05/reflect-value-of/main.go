@@ -51,4 +51,9 @@ func main() {
 		fmt.Println("rv3 type is Chan")
 		rv4.TrySend(rv2) // TrySend(rv1)だとpanic
 	}
+
+	// GoではJavaのReflection APIのように名前解決はできず、必ず有効な値から取得する
+	// reflect.TypeOf("Point") // これは取得できない
+	myType := reflect.TypeOf(Point{})
+	fmt.Printf("myType is type of %s\n", myType.Name())
 }
