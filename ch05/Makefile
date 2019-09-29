@@ -11,3 +11,7 @@ reflect-value-of:
 .PHONY: reflect-type
 reflect-type:
 	$(MAKE) -C reflect-type
+
+.PHONY: dynamic-create
+dynamic-create:
+	$(MAKE) -C dynamic-create

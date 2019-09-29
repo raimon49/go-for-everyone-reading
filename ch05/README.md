@@ -15,3 +15,10 @@ $ make reflect-value-of
 # reflect.Type
 $ make reflect-type
 ```
+
+## 5.3 reflectの利用例 ハマらないためのレシピ集
+
+```bash
+# 値を動的に生成する
+$ make dynamic-create
+```
