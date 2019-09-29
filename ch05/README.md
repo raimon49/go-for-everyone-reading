@@ -11,4 +11,7 @@ $ make classical-type-assertion
 ```bash
 # reflect.Value
 $ make reflect-value-of
+
+# reflect.Type
+$ make reflect-type
 ```
