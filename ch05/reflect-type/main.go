@@ -4,6 +4,7 @@ import (
 	"errors"
 	"fmt"
 	"reflect"
+	"strings"
 )
 
 type Point struct {
@@ -34,6 +35,16 @@ func Marshal(v interface{}) ([]byte, error) {
 			// reflect.Value型
 			fv := rv.Field(i)
 			fmt.Println("Field " + ftv.Name + " is " + fv.Type().String())
+
+			if ftv.PkgPath != "" {
+				continue
+			}
+
+			tag := ftv.Tag.Get("mytag")
+			parts := strings.Split(tag, ",")
+			shortname := parts[0]
+
+			fmt.Println("Field " + ftv.Name + "'s shortname is " + shortname + " defined in the 'struct tag'")
 		}
 	default:
 		// map/struct以外ではエラー
