@@ -23,6 +23,8 @@ func main() {
 		if ft.PkgPath == "" {
 			fmt.Printf("ft(i) -> %#v\n", ft)
 			fmt.Printf("fv(i) -> %#v\n", fv.Interface())
+		} else {
+			fmt.Printf("fv(i) PkgPath: %s", ft.PkgPath)
 		}
 	}
 }
