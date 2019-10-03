@@ -15,3 +15,7 @@ reflect-type:
 .PHONY: dynamic-create
 dynamic-create:
 	$(MAKE) -C dynamic-create
+
+.PHONY: reflect-scope-pkg
+reflect-scope-pkg:
+	$(MAKE) -C reflect-scope-pkg

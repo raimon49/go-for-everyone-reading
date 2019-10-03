@@ -22,3 +22,7 @@ $ make reflect-type
 # 値を動的に生成する
 $ make dynamic-create
 ```
+
+```bash
+$ make reflect-scope-pkg
+```
