@@ -24,5 +24,6 @@ $ make dynamic-create
 ```
 
 ```bash
+# 見える範囲・見えない範囲
 $ make reflect-scope-pkg
 ```
