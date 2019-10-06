@@ -24,7 +24,24 @@ func main() {
 			fmt.Printf("ft(i) -> %#v\n", ft)
 			fmt.Printf("fv(i) -> %#v\n", fv.Interface())
 		} else {
-			fmt.Printf("fv(i) PkgPath: %s", ft.PkgPath)
+			fmt.Printf("fv(i) PkgPath: %s\n", ft.PkgPath)
 		}
 	}
+
+	val := reflect.TypeOf(Person{})
+	fmt.Printf("Method Name = %s\n", val.Method(0).Name) // Foo
+
+	val = reflect.TypeOf(&Person{})
+	fmt.Printf("Method Name = %s\n", val.Method(1).Name) // PtrFoo
+
+}
+
+// レシーバがポインタ
+func (p *Person) PtrFoo() string {
+	return "ptr"
+}
+
+// レシーバが実体
+func (p Person) Foo() string {
+	return "val"
 }
