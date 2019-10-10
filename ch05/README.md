@@ -26,4 +26,10 @@ $ make dynamic-create
 ```bash
 # 見える範囲・見えない範囲
 $ make reflect-scope-pkg
+
+# Setできる値
+$ make reflect-can-set
+
+# reflectでinterfaceを満たしているかどうかの確認
+$ make reflect-type-implements
 ```

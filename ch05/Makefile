@@ -19,3 +19,11 @@ dynamic-create:
 .PHONY: reflect-scope-pkg
 reflect-scope-pkg:
 	$(MAKE) -C reflect-scope-pkg
+
+.PHONY: reflect-can-set
+reflect-can-set:
+	$(MAKE) -C reflect-can-set
+
+.PHONY: reflect-type-implements
+reflect-type-implements:
+	$(MAKE) -C reflect-type-implements
