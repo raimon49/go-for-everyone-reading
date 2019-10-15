@@ -31,7 +31,17 @@ func makeChannelsForFiles(files []string) ([]reflect.Value, error) {
 }
 
 func readFromFile(ch chan []byte, f *os.File) {
-	// TODO
+	defer close(ch) // 全て終わったら引数のチャンネルを閉じる
+	defer f.Close() // 全て終わったら引数のファイルを閉じる
+
+	buf := make([]byte, 4096)
+	for {
+		// 読み込めるデータがあればそれをチャンネルに渡す
+		// ここではエラーがあっても敢えて処理を続ける（io.EOFを受け取ったらtailできなくなってしまうため）
+		if n, err := f.Read(buf); err == nil {
+			ch <- buf[:n]
+		}
+	}
 }
 
 func main() {
