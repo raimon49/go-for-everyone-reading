@@ -44,6 +44,19 @@ func readFromFile(ch chan []byte, f *os.File) {
 	}
 }
 
+func makeSelectCases(cs ...reflect.Value) ([]reflect.SelectCase, error) {
+	// 与えられた分のchanの数だけSelectCaseを作成
+	cases := make([]reflect.SelectCase, len(cs))
+
+	// TODO
+
+	return cases, nil
+}
+
+func doSelect(cases []reflect.SelectCase) {
+	// TODO
+}
+
 func main() {
 	if err := _main(); err != nil {
 		fmt.Println("%s\n", err)
@@ -61,11 +74,18 @@ func _main() error {
 	signal.Notify(sigch, syscall.SIGTERM, syscall.SIGINT, syscall.SIGQUIT)
 
 	// os.Argsの最初の引数はこのコマンド名で、2番目以降が対象ファイル名
-	// channels, err := makeChannelsForFiles(os.Args[1:])
-	_, err := makeChannelsForFiles(os.Args[1:])
+	channels, err := makeChannelsForFiles(os.Args[1:])
 	if err != nil {
 		return nil
 	}
+
+	// 引数のファイル分だけループして作成されたチャンネルで動的にselect caseを作成
+	cases, err := makeSelectCases(channels...)
+	if err != nil {
+		return err
+	}
+
+	go doSelect(cases)
 
 	return nil
 }
