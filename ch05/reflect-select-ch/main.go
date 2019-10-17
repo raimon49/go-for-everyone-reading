@@ -44,11 +44,22 @@ func readFromFile(ch chan []byte, f *os.File) {
 	}
 }
 
+// チャンネルが格納されたreflect.Valueの配列を使い、対応するreflect.SelectCaseを作成
 func makeSelectCases(cs ...reflect.Value) ([]reflect.SelectCase, error) {
 	// 与えられた分のchanの数だけSelectCaseを作成
 	cases := make([]reflect.SelectCase, len(cs))
+	for i, ch := range cs {
+		// reflect.Valueの値がチャンネルでない場合はエラーを返す
+		if ch.Kind() != reflect.Chan {
+			return nil, errors.New("argument must be a channel")
+		}
 
-	// TODO
+		// チャンネルの場合はSelectCaseを作成
+		cases[i] = reflect.SelectCase{
+			Chan: ch,
+			Dir:  reflect.SelectRecv,
+		}
+	}
 
 	return cases, nil
 }
