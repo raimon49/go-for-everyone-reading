@@ -100,7 +100,14 @@ func _main() error {
 		return err
 	}
 
+	// selectを動的に生成・実行
 	go doSelect(cases)
+
+	// シグナルを受け取るまでブロックし続け、Ctrl-Cでシグナルを受け取ると終了
+	select {
+	case <-sigch:
+		return nil
+	}
 
 	return nil
 }
