@@ -65,7 +65,11 @@ func makeSelectCases(cs ...reflect.Value) ([]reflect.SelectCase, error) {
 }
 
 func doSelect(cases []reflect.SelectCase) {
-	// TODO
+	for {
+		if chosen, recv, ok := reflect.Select(cases); ok {
+			fmt.Printf("\n=== %s ===\n%s", os.Args[chosen + 1], recv.Interface())
+		}
+	}
 }
 
 func main() {
