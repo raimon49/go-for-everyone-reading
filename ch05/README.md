@@ -32,4 +32,8 @@ $ make reflect-can-set
 
 # reflectでinterfaceを満たしているかどうかの確認
 $ make reflect-type-implements
+
+# 動的なselect文の構築
+$ cd select-ch; ./select-ch
+$ reflect-select-ch/reflect-select-ch reflect-select-ch/aaa.txt reflect-select-ch/bbb.txt reflect-select-ch/ccc.txt
 ```

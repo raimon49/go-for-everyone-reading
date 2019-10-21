@@ -27,3 +27,8 @@ reflect-can-set:
 .PHONY: reflect-type-implements
 reflect-type-implements:
 	$(MAKE) -C reflect-type-implements
+
+.PHONY: reflect-select-ch
+reflect-select-ch:
+	$(MAKE) -C select-ch
+	$(MAKE) -C reflect-select-ch
