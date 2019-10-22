@@ -32,3 +32,11 @@ reflect-type-implements:
 reflect-select-ch:
 	$(MAKE) -C select-ch
 	$(MAKE) -C reflect-select-ch
+
+.PHONY: reflect-access-performance
+reflect-access-performance:
+	$(MAKE) -C reflect-access-performance
+
+.PHONY: reflect-sort-performance
+reflect-sort-performance:
+	$(MAKE) -C reflect-sort-performance

@@ -37,3 +37,13 @@ $ make reflect-type-implements
 $ cd select-ch; ./select-ch
 $ reflect-select-ch/reflect-select-ch reflect-select-ch/aaa.txt reflect-select-ch/bbb.txt reflect-select-ch/ccc.txt
 ```
+
+## 5.4 reflectのパフォーマンスまとめ
+
+```bash
+# reflectと型アサーションの比較
+$ make reflect-access-performance
+
+# reflectによるソート
+$ make reflect-sort-performance
+```
