@@ -1,5 +1,9 @@
 # go-for-everyone-reading
 
+## Description
+
+Records read about the book ["Golang for everyone"](https://gihyo.jp/book/2016/978-4-7741-8392-3)
+
 ## Environment
 
 * Go 1.12.4
